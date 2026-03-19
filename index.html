@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sambhav | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="pixel-cursor"></div>
+
+    <div class="liquid-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#about" class="nav-item">About</a>
+            <a href="#skills" class="nav-item">Expertise</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero container">
+        <div class="fade-up">
+            <h1>Sambhav This Side</h1>
+            <p>BCA Student. Cybersecurity Enthusiast. <br>Building the future of digital security.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="about" class="about container">
+        <div class="about-card glass-panel fade-up">
+            <h2 class="section-title" style="margin-bottom: 1.5rem;">About Me</h2>
+            <div class="about-text">
+                <p>I focus on simplicity, logic, and security. As a BCA student, my work bridges the gap between creative design and robust system architecture. Whether it's analyzing network packets or designing fluid user interfaces, I aim for perfection in every detail.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills container">
+        <h2 class="section-title fade-up">Expertise</h2>
+        <div class="skills-grid fade-up">
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-code"></i></div>
+                <h3 class="skill-title">Frontend</h3>
+                <ul class="skill-list">
+                    <li>HTML5 & CSS3</li>
+                    <li>Vanilla JavaScript</li>
+                    <li>Responsive UI</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3 class="skill-title">Security</h3>
+                <ul class="skill-list">
+                    <li>Penetration Testing</li>
+                    <li>Network Analysis</li>
+                    <li>Ethical Hacking</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-pen-nib"></i></div>
+                <h3 class="skill-title">Creative</h3>
+                <ul class="skill-list">
+                    <li>Video Editing</li>
+                    <li>Visual Design</li>
+                    <li>Storytelling</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact container">
+        <h2 class="section-title fade-up">Get in Touch</h2>
+        <div class="contact-container fade-up">
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sambhav-singh-1a73252a6/" target="_blank" class="social-item">
+                    <i class="fab fa-linkedin" style="color: #0077b5;"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Def4ult0" target="_blank" class="social-item">
+                    <i class="fab fa-github" style="color: #333;"></i> GitHub
+                </a>
+                <a href="https://leetcode.com/u/Def4ult01/" target="_blank" class="social-item">
+                    <i class="fas fa-code" style="color: #f7931e;"></i> LeetCode
+                </a>
+                <a href="https://tryhackme.com/p/Default0101" target="_blank" class="social-item">
+                    <i class="fas fa-box-open" style="color: #9fef00;"></i> TryHackMe
+                </a>
+            </div>
+
+            <form class="glass-panel" id="contact-form" style="padding: 2rem;">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="5" placeholder="How can I help you?" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                <div id="form-message" style="margin-top: 1rem; text-align: center; font-size: 0.9rem;"></div>
+            </form>
+
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 Sambhav. Designed with simplicity.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
