@@ -15,7 +15,7 @@ app.listen(PORT, () => {
 });
 
 // ✅ MongoDB connection (do NOT block server start)
-mongoose.connect("mongodb+srv://sambhav:sambhav123@cluster0.xxxxx.mongodb.net/portfolio")
+mongoose.connect("mongodb+srv://sambhav:<sambhav123>@cluster0.csga6dk.mongodb.net/?appName=Cluster0")
 .then(() => console.log("MongoDB connected"))
 .catch(err => console.log("MongoDB error:", err));
 
