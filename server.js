@@ -32,11 +32,14 @@ app.get("/", (req, res) => {
 });
 
 app.post("/contact", async (req, res) => {
+    console.log("DATA RECEIVED:", req.body);
+
     try {
         const newContact = new Contact(req.body);
         await newContact.save();
         res.json({ status: "saved" });
     } catch (err) {
-        res.status(500).json({ error: "Failed to save" });
+        console.log("SAVE ERROR:", err); // 👈 IMPORTANT
+        res.status(500).json({ error: err.message }); // 👈 show real error
     }
 });
