@@ -124,7 +124,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
         message: document.getElementById("message").value
     };
 
-    const response = await fetch("fetch("https://portfolio-backend.onrender.com/contact", {", {
+    const response = await fetch("fetch("https://portfolio-backend-36gi.onrender.com/contact", {", {
         method: "POST",
         headers: {
             "Content-Type":"application/json"
