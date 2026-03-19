@@ -7,17 +7,36 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ CORRECT MongoDB connection
+// ✅ Start server FIRST (important for Render)
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
+
+// ✅ MongoDB connection (do NOT block server start)
 mongoose.connect("mongodb+srv://sambhav:sambhav123@cluster0.xxxxx.mongodb.net/portfolio")
-.then(() => {
-    console.log("MongoDB connected");
+.then(() => console.log("MongoDB connected"))
+.catch(err => console.log("MongoDB error:", err));
 
-    const PORT = process.env.PORT || 3000;
+// Model
+const Contact = mongoose.model("Contact", {
+    name: String,
+    email: String,
+    message: String
+});
 
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
-})
-.catch(err => {
-    console.error("MongoDB failed:", err);
+// Routes
+app.get("/", (req, res) => {
+    res.send("Backend is running 🚀");
+});
+
+app.post("/contact", async (req, res) => {
+    try {
+        const newContact = new Contact(req.body);
+        await newContact.save();
+        res.json({ status: "saved" });
+    } catch (err) {
+        res.status(500).json({ error: "Failed to save" });
+    }
 });
