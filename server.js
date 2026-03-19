@@ -4,31 +4,21 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
-// 🔥 Replace later with MongoDB Atlas URL
-mongoose.connect("mongodb+srv://sambhav:<sambhav25!@>@cluster0.csga6dk.mongodb.net/?appName=Cluster0");
+// 🔥 MongoDB Connection
+mongoose.connect("mongoose.connect("mongodb+srv://sambhav:sambhav25!@@cluster0.xxxxx.mongodb.net/portfolio")")
+.then(() => {
+    console.log("MongoDB connected");
 
-// Schema
-const Contact = mongoose.model("Contact", {
-    name: String,
-    email: String,
-    message: String
-});
-// test route
-app.get("/", (req, res) => {
-    res.send("Backend is running 🚀");
-// API route
-app.post("/contact", async (req, res) => {
-    const newContact = new Contact(req.body);
-    await newContact.save();
-    res.json({ status: "saved" });
-});
+    // ✅ START SERVER ONLY AFTER DB CONNECTS
+    const PORT = process.env.PORT || 3000;
 
-// Start server
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+})
+.catch(err => {
+    console.error("MongoDB failed:", err);
 });
