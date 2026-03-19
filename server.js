@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 // 🔥 Replace later with MongoDB Atlas URL
-mongoose.connect("mongodb://127.0.0.1:27017/portfolio");
+mongoose.connect("mongodb+srv://sambhav:<sambhav25!@>@cluster0.csga6dk.mongodb.net/?appName=Cluster0");
 
 // Schema
 const Contact = mongoose.model("Contact", {
