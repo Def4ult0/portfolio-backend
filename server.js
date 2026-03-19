@@ -31,7 +31,7 @@ app.post("/contact", async (req, res) => {
 });
 
 // 🔥 CONNECT DB FIRST, THEN START SERVER
-mongoose.connect("mongodb+srv://sambhav:sambhav123>@cluster0.csga6dk.mongodb.net/?appName=Cluster0")
+mongoose.connect("mongodb+srv://sam:sam123>@cluster0.csga6dk.mongodb.net/?appName=Cluster0")
 .then(() => {
     console.log("MongoDB connected ✅");
 
