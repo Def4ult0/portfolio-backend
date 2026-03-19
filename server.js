@@ -16,7 +16,9 @@ const Contact = mongoose.model("Contact", {
     email: String,
     message: String
 });
-
+// test route
+app.get("/", (req, res) => {
+    res.send("Backend is running 🚀");
 // API route
 app.post("/contact", async (req, res) => {
     const newContact = new Contact(req.body);
