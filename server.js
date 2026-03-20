@@ -39,6 +39,8 @@ app.listen(PORT, () => {
 });
 
 // ✅ CONNECT MONGODB (AFTER SERVER START)
-mongoose.connect("mongodb+srv://sam:sam123>@cluster0.csga6dk.mongodb.net/?appName=Cluster0")
+mongoose.connect("mongoose.connect("mongodb+srv://sam:sam123@portfolio.wwydikb.mongodb.net/portfolio?appName=Portfolio")
+.then(() => console.log("MongoDB connected ✅"))
+.catch(err => console.log("MongoDB ERROR ❌:", err));")
 .then(() => console.log("MongoDB connected ✅"))
 .catch(err => console.log("MongoDB ERROR ❌:", err));
