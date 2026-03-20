@@ -7,19 +7,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ Test route
+// Test route
 app.get("/", (req, res) => {
     res.send("Backend is running 🚀");
 });
 
-// ✅ Schema
+// Schema
 const Contact = mongoose.model("Contact", {
     name: String,
     email: String,
     message: String
 });
 
-// ✅ Route
+// Route
 app.post("/contact", async (req, res) => {
     try {
         const newContact = new Contact(req.body);
@@ -31,16 +31,14 @@ app.post("/contact", async (req, res) => {
     }
 });
 
-// ✅ START SERVER FIRST (IMPORTANT FOR RENDER)
+// Start server
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
 
-// ✅ CONNECT MONGODB (AFTER SERVER START)
-mongoose.connect("mongoose.connect("mongodb+srv://sam:sam123@portfolio.wwydikb.mongodb.net/portfolio?appName=Portfolio")
-.then(() => console.log("MongoDB connected ✅"))
-.catch(err => console.log("MongoDB ERROR ❌:", err));")
+// Connect MongoDB
+mongoose.connect("mongodb+srv://sam:sam123@portfolio.wwydikb.mongodb.net/portfolio?appName=Portfolio")
 .then(() => console.log("MongoDB connected ✅"))
 .catch(err => console.log("MongoDB ERROR ❌:", err));
